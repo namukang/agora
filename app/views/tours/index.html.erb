@@ -1,0 +1,27 @@
+<h1>Listing tours</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Guide</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tours.each do |tour| %>
+  <tr>
+    <td><%= tour.title %></td>
+    <td><%= tour.description %></td>
+    <td><%= tour.guide_id %></td>
+    <td><%= link_to 'Show', tour %></td>
+    <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
+    <td><%= link_to 'Destroy', tour, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tour', new_tour_path %>

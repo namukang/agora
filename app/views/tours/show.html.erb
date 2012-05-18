@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @tour.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @tour.description %>
+</p>
+
+<p>
+  <b>Guide:</b>
+  <%= @tour.guide_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_tour_path(@tour) %> |
+<%= link_to 'Back', tours_path %>
