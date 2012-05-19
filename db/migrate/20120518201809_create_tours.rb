@@ -3,7 +3,7 @@ class CreateTours < ActiveRecord::Migration
     create_table :tours do |t|
       t.string :title
       t.text :description
-      t.int :guide_id
+      t.integer :guide_id
       t.string :image
 
       t.timestamps
