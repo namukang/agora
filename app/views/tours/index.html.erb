@@ -26,15 +26,15 @@
                       edit_tour_path(tour), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       tour_path(tour),
-                      :method => :delete,
-                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-                      :class => 'btn btn-mini btn-danger' %>
+                      method: :delete,
+                      confirm: 'Are you sure?',
+                      class: 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to 'New Tour',
             new_tour_path,
             :class => 'btn btn-primary' %>

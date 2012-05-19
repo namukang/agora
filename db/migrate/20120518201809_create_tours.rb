@@ -4,7 +4,6 @@ class CreateTours < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.integer :guide_id
-      t.string :image
 
       t.timestamps
     end

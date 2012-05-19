@@ -1,25 +1,24 @@
-<%- model_class = @tour.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<h1>Tour</h1>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dt><strong>Title:</strong></dt>
   <dd><%= @tour.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dt><strong>Description:</strong></dt>
   <dd><%= @tour.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:guide_id) %>:</strong></dt>
+  <dt><strong>Guide ID:</strong></dt>
   <dd><%= @tour.guide_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <dd><%= @tour.image %></dd>
+  <dt><strong>Image:</strong></dt>
+  <dd><%= image_tag @tour.image.url %></dd>
 </dl>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
+  <%= link_to 'Back',
               tours_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+  <%= link_to 'Edit',
               edit_tour_path(@tour), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+  <%= link_to 'Destroy',
               tour_path(@tour),
-              :method => 'delete',
-              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-              :class => 'btn btn-danger' %>
+              method: 'delete',
+              confirm: 'Are you sure?',
+              class: 'btn btn-danger' %>
 </div>

@@ -1,23 +1,18 @@
-<%- model_class = @guide.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human %></h1>
-
+<h1>Show Guide</h1>
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dt><strong>Name:</strong></dt>
   <dd><%= @guide.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dt><strong>Description:</strong></dt>
   <dd><%= @guide.description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <dd><%= @guide.image %></dd>
+  <dt><strong>Image:</strong></dt>
+  <dd><%= image_tag @guide.image.url %></dd>
 </dl>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              guides_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_guide_path(@guide), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              guide_path(@guide),
-              :method => 'delete',
-              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-              :class => 'btn btn-danger' %>
+  <%= link_to 'Back', guides_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_guide_path(@guide), :class => 'btn' %>
+  <%= link_to 'Destroy', guide_path(@guide),
+              method: 'delete',
+              confirm: 'Are you sure?',
+              class: 'btn btn-danger' %>
 </div>
