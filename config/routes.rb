@@ -1,4 +1,6 @@
 Agora::Application.routes.draw do
+  resources :guides
+
   resources :tours
 
   # The priority is based upon order of creation:

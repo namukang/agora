@@ -1,3 +1,3 @@
 class Tour < ActiveRecord::Base
-  attr_accessible :description, :guide_id, :title
+  attr_accessible :description, :guide_id, :title, :image
 end
