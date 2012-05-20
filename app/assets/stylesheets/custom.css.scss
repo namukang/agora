@@ -114,6 +114,13 @@ input, textarea, select, .uneditable-input {
     @include box_sizing;
 }
 
+
+/* Tours */
+
+.tour-thumbnail .title {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 /* isotope transitions */
 .isotope,
 .isotope .isotope-item {
