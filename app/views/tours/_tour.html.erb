@@ -1,5 +1,5 @@
 <li class="span4">
-  <a href="<%= tour_path(tour) %>" class="thumbnail">
+  <a href="<%= tour_path(tour) %>" class="thumbnail <%= tour.topic_list.join(' ')%> <%= tour.time_list.join(' ') %>">
     <%= image_tag tour.image.url %>
   </a>
 </li>
