@@ -18,7 +18,7 @@ class ToursController < ApplicationController
   # GET /tours/1.json
   def show
     @tour = Tour.find(params[:id])
-    if @tour.title == "Food Cart"
+    if @tour.id % 2 == 1
       @guide = "Neal Donnelly"
       @guide_image = "neal.png"
       @guide_bio = "I'm a Princeton University student hailing from Northampton, MA (in western mass, not near Boston). I'm studying electrical engineering, I've worked three summers as a web developer, and I've dabbled in design, flash game development, and painting. I'm also an expert in New York's food carts, because I absolutely love food."

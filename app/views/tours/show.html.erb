@@ -4,7 +4,7 @@
     <h1><%= @tour.title %></h1>
   </div>
   <div class="banner span11" style="height: 400px; background-image: url(<%= @tour.banner.url %>); background-position: 0px -50px;">
-    <button class="btn btn-success btn-large">$<%= @tour.price %> for <%= @tour.hours %> hours</button>
+    <button class="btn btn-success btn-large">$<%= @tour.price %> for <%= pluralize(@tour.hours, 'hour') %></button>
   </div>
 
   <div class="guide span6">

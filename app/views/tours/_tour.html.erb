@@ -1,5 +1,6 @@
 <li class="span4">
-  <a href="<%= tour_path(tour) %>" class="thumbnail <%= tour.topic_list.join(' ')%> <%= tour.time_list.join(' ') %>">
-    <%= image_tag tour.image.url %>
+  <a href="<%= tour_path(tour) %>">
+    <div class="thumbnail <%= tour.topic_list.join(' ')%> <%= tour.time_list.join(' ') %>" style="background-image: url(<%= tour.image.url %>); height: 250px;">
+    </div>
   </a>
 </li>
