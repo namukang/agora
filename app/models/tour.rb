@@ -3,4 +3,6 @@ class Tour < ActiveRecord::Base
   has_attached_file :image
   has_attached_file :banner
   acts_as_taggable_on :topics, :times
+
+  default_scope order: 'tours.created_at DESC'
 end
