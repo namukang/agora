@@ -1,9 +1,8 @@
-<li class="span4">
-    <div class="thumbnail <%= tour.topic_list.join(' ')%> <%= tour.time_list.join(' ') %>" style="background-image: url(<%= tour.image.url %>); height: 250px;">
+<a href="<%= tour_path(tour) %>">
+    <div class="search-tile <%= tour.topic_list.join(' ')%> <%= tour.time_list.join(' ') %> price<%= tour.price %>" style="background-image: url(<%= tour.image.url %>);">
       <div class="description" style="display: none"><%= tour.description %></div>
-      <span class="price <%= tour.price %>" style="display: none"><%= tour.price %></span>
-      <span class="hours <%= tour.hours %>" style="display: none"><%= tour.hours %></span>
       <h2><%= tour.title %></h2>
-      <a href="<%= tour_path(tour) %>" class="btn btn-success btn-large">$<%= tour.price %> for <%= pluralize(tour.hours, 'hour') %></a>
+       <p class="search-price">$<%= tour.price %> for <%= pluralize(tour.hours, 'hour') %>
+       </p>
     </div>
-</li>
+</a>
