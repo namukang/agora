@@ -1,4 +1,44 @@
-<h1>Tours</h1>
-<ul class="thumbnails">
-  <%= render @tours %>
-</ul>
+<div class="center">
+  <h1>Discover</h1>
+</div>
+<div class="span3">
+  <div class="filter-sidebar well">
+    <ul class="nav nav-list">
+      <li class="nav-header">
+        Topics
+      </li>
+      <li>
+        <% topics = %w(food music nightlife clothing art movies athletics religion homes) %>
+        <% topics.each do |topic| %>
+        <label class="checkbox">
+          <input type="checkbox" id="topicCheckbox" value="<%= topic %>">
+          <%= topic.capitalize %>
+        </label>
+        <% end %>
+      </li>
+      <li class="nav-header">
+        Time of day
+      </li>
+      <li>
+        <% times = %w(morning daytime evening late_night) %>
+        <% times.each do |time| %>
+        <label class="checkbox">
+          <input type="checkbox" id="topicCheckbox" value="<%= time %>">
+          <%= time.gsub('_', ' ').capitalize %>
+        </label>
+        <% end %>
+      </li>
+      <li class="nav-header">
+        Search
+      </li>
+      <li>
+        <input type="text" class="input-medium search-query">
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="span8">
+  <ul class="thumbnails">
+    <%= render @tours %>
+  </ul>
+</div>
