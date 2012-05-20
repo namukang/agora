@@ -32,6 +32,12 @@ body {
 
 .banner {
     margin-bottom: 40px;
+    position: relative;
+    .btn {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
 }
 
 .tour {
