@@ -11,7 +11,7 @@
         <% topics = %w(food music nightlife clothing art movies athletics religion homes) %>
         <% topics.each do |topic| %>
         <label class="checkbox">
-          <input type="checkbox" id="topicCheckbox" value="<%= topic %>">
+          <input type="checkbox" class="topicCheckbox" value="<%= topic %>" checked>
           <%= topic.capitalize %>
         </label>
         <% end %>
@@ -19,26 +19,26 @@
       <li class="nav-header">
         Time of day
       </li>
-      <li>
+      <li class="tour-times">
         <% times = %w(morning daytime evening late_night) %>
         <% times.each do |time| %>
         <label class="checkbox">
-          <input type="checkbox" id="topicCheckbox" value="<%= time %>">
+          <input type="checkbox" class="topicCheckbox" value="<%= time %>" checked>
           <%= time.gsub('_', ' ').capitalize %>
         </label>
         <% end %>
       </li>
       <li class="nav-header">
-        Search
+        Maximum Price
       </li>
       <li>
-        <input type="text" class="input-medium search-query">
+        <input type="text" class="input-medium search-query price-text">
       </li>
     </ul>
   </div>
 </div>
 <div class="span8">
-  <ul class="thumbnails">
+  <ul class="thumbnails" id="isotope-wrapper" >
     <%= render @tours %>
   </ul>
 </div>
