@@ -1,24 +1,26 @@
-<h1>Tour</h1>
+<div class="tour">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
+  <div class="title span11 center" style="font-family: 'Open Sans', sans-serif">
+    <h1><%= @tour.title %></h1>
+  </div>
+  <div class="banner span11" style="height: 400px; background-image: url(<%= @tour.banner.url %>); background-position: 0px -50px;">
+  </div>
 
-<dl class="dl-horizontal">
-  <dt><strong>Title:</strong></dt>
-  <dd><%= @tour.title %></dd>
-  <dt><strong>Description:</strong></dt>
-  <dd><%= @tour.description %></dd>
-  <dt><strong>Guide ID:</strong></dt>
-  <dd><%= @tour.guide_id %></dd>
-  <dt><strong>Image:</strong></dt>
-  <dd><%= image_tag @tour.image.url %></dd>
-</dl>
+  <div class="guide span6">
+    <h2>What you'll do</h2>
+    <p><%= simple_format @tour.description %></p>
+    <h2>Hear it from <%= @guide.split.first %></h2>
+    <iframe src="http://player.vimeo.com/video/37119711?title=0&amp;byline=0&amp;portrait=0&amp;color=d13030" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  </div>
 
-<div class="form-actions">
-  <%= link_to 'Back',
-              tours_path, :class => 'btn'  %>
-  <%= link_to 'Edit',
-              edit_tour_path(@tour), :class => 'btn' %>
-  <%= link_to 'Destroy',
-              tour_path(@tour),
-              method: 'delete',
-              confirm: 'Are you sure?',
-              class: 'btn btn-danger' %>
+  <div class="description span4">
+    <h2>Meet <%= @guide %></h2>
+    <div class="image" style="width: 200px">
+      <%= image_tag @guide_image %>
+    </div>
+    <p><%= @guide_bio %></p>
+    <h2>Where you'll be</h2>
+    <iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=11+Madison+Ave,+New+York&amp;aq=&amp;sll=40.74212,-73.986987&amp;sspn=0.005162,0.011362&amp;ie=UTF8&amp;hq=&amp;hnear=11+Madison+Ave,+New+York,+10010&amp;ll=40.74212,-73.986989&amp;spn=0.005162,0.011362&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=11+Madison+Ave,+New+York&amp;aq=&amp;sll=40.74212,-73.986987&amp;sspn=0.005162,0.011362&amp;ie=UTF8&amp;hq=&amp;hnear=11+Madison+Ave,+New+York,+10010&amp;ll=40.74212,-73.986989&amp;spn=0.005162,0.011362&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+  </div>
+
 </div>

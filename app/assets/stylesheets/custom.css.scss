@@ -1,7 +1,7 @@
 $bs-green: #46a546;
 $navbarBrandColor: $bs-green;
 
-$bodyBackground: #eee;
+/* $bodyBackground: lighten($bs-green, 40%); */
 
 @import "bootstrap";
 
@@ -26,4 +26,55 @@ body {
 
 .filter-sidebar ul {
     padding-left: 0;
+}
+
+/* Banner */
+
+.banner {
+    margin-bottom: 40px;
+}
+
+.tour {
+    h2 {
+        margin-bottom: 10px;
+    }
+    .guide {
+        padding-right: 90px;
+        border-right: 1px solid $grayLight;
+    }
+}
+
+.description .image {
+    margin-bottom: 15px;
+}
+
+/* footer */
+
+footer {
+    margin-top: 45px;
+    padding: 15px 0;
+    border-top: 1px solid $grayLight;
+    color: #999;
+}
+
+footer a {
+    color: #555;
+}
+
+footer a:hover {
+    color: #222;
+}
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 10px;
 }

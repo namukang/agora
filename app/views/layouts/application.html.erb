@@ -10,6 +10,18 @@
   <%= render 'layouts/header' %>
   <div class="container">
     <%= yield %>
+    <footer class="footer span12">
+      <small>
+        <%= link_to 'Agora', root_url %>
+      </small>
+      <nav>
+        <ul>
+          <li><%= link_to "About",   '#' %></li>
+          <li><%= link_to "Contact", '#' %></li>
+        </ul>
+      </nav>
+    </footer>
   </div>
 </body>
+
 </html>
