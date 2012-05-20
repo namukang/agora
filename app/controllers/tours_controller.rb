@@ -5,7 +5,11 @@ class ToursController < ApplicationController
     @tours = Tour.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      if params[:table]
+        format.html  { render 'table' }
+      else
+        format.html # index.html.erb
+      end
       format.json { render json: @tours }
     end
   end

@@ -1,0 +1,40 @@
+<%- model_class = Tour.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:guide_id) %></th>
+      <th><%= model_class.human_attribute_name(:image) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tours.each do |tour| %>
+      <tr>
+        <td><%= link_to tour.id, tour_path(tour) %></td>
+        <td><%= tour.title %></td>
+        <td><%= tour.description %></td>
+        <td><%= tour.guide_id %></td>
+        <td><%= tour.image %></td>
+        <td><%=l tour.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_tour_path(tour), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      tour_path(tour),
+                      method: :delete,
+                      confirm: 'Are you sure?',
+                      class: 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Tour',
+            new_tour_path,
+            :class => 'btn btn-primary' %>
