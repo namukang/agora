@@ -1,4 +1,5 @@
 var acceptableCategories = ["food",
+"culture",
 "music",
 "nightlife",
 "clothing",
@@ -23,10 +24,11 @@ $(document).ready(function() {
 
 function newPrice(){
 	var input = $(this).attr("value")-0;
-	if(!isNaN(input)){
-		maxPrice = input;
-	}else{
+	if(isNaN(input)){
 		maxPrice = 200;
+	}else{
+		if(input < 30){ maxPrice = 200;}
+		else{ maxPrice = input; }
 	}
 	isotopeString = getIsotopeString();
 	$('#isotope-wrapper').isotope({ filter: isotopeString });
