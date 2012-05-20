@@ -12,6 +12,18 @@
     </div>
   </div>
   <div class="control-group">
+    <%= f.label :price, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, class: 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :hours, class: 'control-label' %>
+    <div class="controls">
+      <%= f.select :hours, [['1 hour', 1], ['2 hours', 2], ['3 hours', 3], ['4 hours', 4]], class: 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
     <%= f.label :image, class: 'control-label' %>
     <div class="controls">
       <%= f.file_field :image, class: 'file_field' %>

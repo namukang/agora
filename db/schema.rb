@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120520011523) do
+ActiveRecord::Schema.define(:version => 20120520034939) do
 
   create_table "guides", :force => true do |t|
     t.string   "name"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(:version => 20120520011523) do
     t.string   "banner_content_type"
     t.integer  "banner_file_size"
     t.datetime "banner_updated_at"
+    t.integer  "price"
+    t.integer  "hours"
   end
 
 end
